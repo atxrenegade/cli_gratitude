@@ -14,12 +14,14 @@ to access stored entries. */
 void greeting();
 void newUser();
 void login();
+void menu();
+void exitProgram();
 
 int main(void)
 {
 	greeting();
 	menu();
-	exit();
+
 
 	return 0;
 }
@@ -31,39 +33,64 @@ int main(void)
 *************************************************
 *************************************************/
 
-// 
-void greeting(); 
-printf("Welcome to Daily Gratitude Application");
-printf("Can you please tell me are you a new or exisiting user?(N = new)(E = Existing user)): ");
-scanf(" %c", &user);
-user = toupper(user); // validate user data, convert lower to upper, remove extra characters
-if (user == 'N')
+
+void greeting()
 {
-	newUser();
+  char user;
+  printf("Welcome to Daily Gratitude Application\n\n\n");
+  printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
+  scanf(" %c", &user);
+  user = toupper(user); // validate user data, convert lower to upper, remove extra characters
+  if (user == 'N')
+  {
+  	newUser();
+  }
+  else if (user == 'E')
+  {
+  	login();
+  }
+  else
+  {
+  	printf("Your reply was not understood please choose (N for new user or E for Existing user)");
+  }
+  // validate user data, convert lower to upper, remove extra characters
 }
-else if (user == 'E')
+
+/*******************************************************************/
+
+void menu()
 {
-	login();
+  return;
 }
-else
+
+
+/******************************************************************/
+void exitProgram()
 {
-	printf("Your reply was not understood please choose (N for new user or E for Existing user)")
+ 
 }
-// validate user data, convert lower to upper, remove extra characters
+
+/****************************************************************/
+void login()
+{
+
+
+}
+
+
+/*******************************************************************/
+void newUser()
+{
+  
+  
+}
 
 
 
 
-
-
-
-// login();
-// new_user();
-// menu();
 // save();
 // printToScreen();
 // sendToPrinter();
 // newEntry();
 // print();
 // reviewEntry();
-// exit();
