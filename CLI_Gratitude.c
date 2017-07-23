@@ -60,7 +60,31 @@ void greeting()
 
 void menu()
 {
-  return;
+  char entry; 	
+  // ***greet user by user name
+  printf("Welcome User!!\n");
+  printf("Would you like to enter a new entry? Or review an existing one?\n");
+  printf("(N = new entry)(E = review exisitng entry)(X = exit): ");
+  scanf(" %c", &entry); 
+  entry = entry(toupper);
+	
+  if (entry == 'N')
+  {
+  	void newEntry();
+  }
+  else if (entry == 'E')
+  {
+  	void reviewEntry();
+  }
+  else if (entry == 'X')
+  {
+  	void exitProgram();
+  }		
+  else
+  {
+  	printf("Im sorry I did not understand your response!");
+	void menu();  
+  }
 }
 
 
