@@ -15,6 +15,7 @@ void newUser();
 void login();
 void menu();
 void exitProgram();
+void newEntry();
 
 int main(void)
 {
@@ -82,7 +83,7 @@ void menu()
   else
   {
   	printf("Im sorry I did not understand your response!");
-	void menu();  
+	  void menu();  
   }
 }
 
@@ -107,9 +108,33 @@ void newUser()
   
   
 }
+/*******************************************************************/
 
-
-
+void newEntry()
+{
+  char am_pm[3];
+  char item_1[1000];
+  char item_2[1000];
+  char item_3[1000];
+  char item_4[1000];
+  char item_5[1000];
+  
+  printf(" Okay User, Let's get started! Is this your AM or PM entry?");
+  printf("Enter AM or PM: ");
+  scanf(" %c", am_pm);
+  printf("Please Describe 5 things you were grateful about today.\n");
+  printf("Include why you were grateful and how it made you feel.\n");
+  printf("1: ");
+  scanf(" %c", item_1);
+  printf("2: ");
+  scanf(" %c", item_2);
+  printf("3: ");
+  scanf(" %c", item_3);
+  printf("4: ");
+  scanf(" %c", item_4);
+  printf("5: ");
+  scanf(" %c", item_5); 
+}
 
 // save();
 // printToScreen();
