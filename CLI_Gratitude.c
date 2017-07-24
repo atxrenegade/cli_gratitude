@@ -2,7 +2,6 @@
 Harleigh Abel
 July 20 2017
 CLI Gratitude App
-
 This program a an application of personal interest to 
 practice my C programming skills.  This program records 
 a user's daily gratitude entries and stores them to be 
@@ -62,17 +61,17 @@ void menu()
 {
   char entry; 	
   // ***greet user by user name
-  printf("Welcome User!!\n");
-  printf("Would you like to enter a new entry? Or review an existing one?\n");
-  printf("(N = new entry)(E = review exisitng entry)(X = exit): ");
+  printf("\n\n\nWelcome User!!\n");
+  printf("\nWould you like to enter a new entry? Or review an existing one?\n");
+  printf("(N = new entry)(R = review existing entry)(X = exit): ");
   scanf(" %c", &entry); 
-  entry = entry(toupper);
+  entry = toupper(entry);
 	
   if (entry == 'N')
   {
   	void newEntry();
   }
-  else if (entry == 'E')
+  else if (entry == 'R')
   {
   	void reviewEntry();
   }
