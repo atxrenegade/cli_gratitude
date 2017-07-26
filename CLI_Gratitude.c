@@ -20,7 +20,7 @@ void newEntry();
 int main(void)
 {
 	greeting();
-	menu();
+
 
 
 	return 0;
@@ -36,16 +36,19 @@ int main(void)
 
 void greeting()
 {
-  char user;
+  char user[2];
+
   printf("Welcome to Daily Gratitude Application\n\n\n");
   printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
-  scanf(" %c", &user);
-  user = toupper(user); // validate user data, convert lower to upper, remove extra characters
-  if (user == 'N')
+  gets(user);
+ 
+ // user = toupper(user); // validate user data, convert lower to upper, remove extra characters
+  
+  /*if ($user == 'N')
   {
   	newUser();
   }
-  else if (user == 'E')
+  else if (&user == 'E')
   {
   	login();
   }
@@ -57,7 +60,7 @@ void greeting()
 }
 
 /*******************************************************************/
-
+}
 void menu()
 {
   char entry; 	
@@ -66,7 +69,7 @@ void menu()
   printf("\nWould you like to enter a new entry? Or review an existing one?\n");
   printf("(N = new entry)(R = review existing entry)(X = exit): ");
   scanf(" %c", &entry); 
-  entry = toupper(entry);
+  //entry = toupper(entry);
 	
   if (entry == 'N')
   {
@@ -112,6 +115,7 @@ void newUser()
 
 void newEntry()
 {
+  
   char am_pm[3];
   char item_1[1000];
   char item_2[1000];
@@ -125,16 +129,19 @@ void newEntry()
   printf("Please Describe 5 things you were grateful about today.\n");
   printf("Include why you were grateful and how it made you feel.\n");
   printf("1: ");
-  scanf(" %c", item_1);
+  scanf(" %s", item_1);
   printf("2: ");
-  scanf(" %c", item_2);
+  scanf(" %s", item_2);
   printf("3: ");
-  scanf(" %c", item_3);
+  scanf(" %s", item_3);
   printf("4: ");
-  scanf(" %c", item_4);
+  scanf(" %s", item_4);
   printf("5: ");
-  scanf(" %c", item_5); 
+  scanf(" %s", item_5);
+  
 }
+
+
 
 // save();
 // printToScreen();
