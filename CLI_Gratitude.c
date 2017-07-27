@@ -16,6 +16,7 @@ void login();
 void menu();
 void exitProgram();
 void newEntry();
+void test();
 
 int main(void)
 {
@@ -36,7 +37,7 @@ int main(void)
 
 void greeting()
 {
-  char user[2];
+  
 
   printf("Welcome to Daily Gratitude Application\n\n\n");
   printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
@@ -58,6 +59,7 @@ void greeting()
   }
   // validate user data, convert lower to upper, remove extra characters
 }
+
 
 /*******************************************************************/
 }
@@ -89,8 +91,24 @@ void menu()
 	  void menu();  
   }
 }
-
-
+/**********************************************************************/
+void test()
+{
+char ans;
+  scanf(" %c", &ans);
+  if (ans == 'Y') 
+  { 
+    printf("Test Y");
+  }
+  else if(ans == 'N')
+  {
+    printf("Test N");
+  }
+  else
+  {
+    printf("error");
+  }
+}
 /******************************************************************/
 void exitProgram()
 {
@@ -137,11 +155,8 @@ void newEntry()
   printf("4: ");
   scanf(" %s", item_4);
   printf("5: ");
-  scanf(" %s", item_5);
-  
+  scanf(" %s", item_5); 
 }
-
-
 
 // save();
 // printToScreen();
