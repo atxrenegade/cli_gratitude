@@ -37,15 +37,15 @@ int main(void)
 
 void greeting()
 {
-  
+  char user;
 
   printf("Welcome to Daily Gratitude Application\n\n\n");
   printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
   gets(user);
  
- // user = toupper(user); // validate user data, convert lower to upper, remove extra characters
+  user = toupper(user); // validate user data, convert lower to upper, remove extra characters
   
-  /*if ($user == 'N')
+  if ($user == 'N')
   {
   	newUser();
   }
@@ -62,53 +62,37 @@ void greeting()
 
 
 /*******************************************************************/
-}
+
+ 
 void menu()
 {
-  char entry; 	
-  // ***greet user by user name
+  char entry;
+   // ***greet user by user name
   printf("\n\n\nWelcome User!!\n");
   printf("\nWould you like to enter a new entry? Or review an existing one?\n");
   printf("(N = new entry)(R = review existing entry)(X = exit): ");
-  scanf(" %c", &entry); 
-  //entry = toupper(entry);
-	
-  if (entry == 'N')
-  {
-  	void newEntry();
+  scanf(" %c", &entry);
+  if (entry == 'Y') 
+  { 
+    printf("Test Y");
+    newEntry();
   }
-  else if (entry == 'R')
+  else if(entry == 'N')
   {
-  	void reviewEntry();
+    printf("Test N");
+    reviewEntry();
   }
-  else if (entry == 'X')
+   else if (entry == 'X')
   {
   	void exitProgram();
   }		
   else
   {
-  	printf("Im sorry I did not understand your response!");
-	  void menu();  
-  }
-}
-/**********************************************************************/
-void test()
-{
-char ans;
-  scanf(" %c", &ans);
-  if (ans == 'Y') 
-  { 
-    printf("Test Y");
-  }
-  else if(ans == 'N')
-  {
-    printf("Test N");
-  }
-  else
-  {
     printf("error");
   }
 }
+
+
 /******************************************************************/
 void exitProgram()
 {
@@ -131,7 +115,7 @@ void newUser()
 }
 /*******************************************************************/
 
-void newEntry()
+/*void newEntry()
 {
   
   char am_pm[3];
