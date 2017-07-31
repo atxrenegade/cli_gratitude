@@ -133,29 +133,40 @@ void newUser()
 
 void newEntry()
 {
+    struct userEntry {
+    char date_and_time[30];  
+    char am_pm[3];
+    char item_1[1000];
+    char item_2[1000];
+    char item_3[1000];
+    char item_4[1000];
+    char item_5[1000];
+  }
   
-  char am_pm[3];
-  char item_1[1000];
-  char item_2[1000];
-  char item_3[1000];
-  char item_4[1000];
-  char item_5[1000];
+  struct userEntry entry[1];
   
+  // get and store date and time
+  //entry.date_and_time = clock();
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   printf("Enter AM or PM: ");
-  scanf(" %c", am_pm);
+  gets(entry.am_pm);
   printf("Please Describe 5 things you were grateful about today.\n");
   printf("Include why you were grateful and how it made you feel.\n");
   printf("1: ");
-  scanf(" %s", item_1);
+  gets(entry.item_1);
   printf("2: ");
-  scanf(" %s", item_2);
+  gets(entry.item_2);
   printf("3: ");
-  scanf(" %s", item_3);
+  gets(entry.item_3);
   printf("4: ");
-  scanf(" %s", item_4);
+  gets(entry.item_4);
   printf("5: ");
-  scanf(" %s", item_5);
+  gets(entry.item_5);
+  
+  // add function and header file to record current time
+  // refactor entry_item loop and iterate through iterate
+  // open and write to file
+  // name file by date and am/pm
 }
 
 
