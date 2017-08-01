@@ -9,6 +9,7 @@ printed or reviewed later. It requires a username and password
 to access stored entries. */
 
 #include <stdio.h>
+#include <time.h>
 
 void greeting();
 void newUser();
@@ -133,20 +134,29 @@ void newUser()
 
 void newEntry()
 {
-    struct userEntry {
-    char date_and_time[30];  
+   struct userEntry {
+    char time_of_day[30];  
     char am_pm[3];
     char item_1[1000];
     char item_2[1000];
     char item_3[1000];
     char item_4[1000];
     char item_5[1000];
-  }
+  }; 
+  
   
   struct userEntry entry[1];
-  
-  // get and store date and time
-  //entry.date_and_time = clock();
+    struct tm str_time;
+		time_t time_of_day;
+
+		str_time.tm_year = 2100-1900;
+		str_time.tm_mon = 6;
+		str_time.tm_mday = 5;
+		str_time.tm_hour = 10;
+		str_time.tm_min = 3;
+	
+		time_of_day = mktime(&str_time);
+
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   printf("Enter AM or PM: ");
   gets(entry.am_pm);
