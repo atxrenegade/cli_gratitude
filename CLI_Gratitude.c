@@ -11,6 +11,8 @@ to access stored entries. */
 #include <stdio.h>
 #include <time.h>
 
+FILE * fptr; //Defines a file pointer
+
 void greeting();
 void newUser();
 void login();
@@ -146,32 +148,47 @@ void newEntry()
   
   
   struct userEntry entry[1];
-    struct tm str_time;
-		time_t time_of_day;
+  struct tm str_time;
+  time_t time_of_day;
+  str_time.tm_year = 2100-1900;
+  str_time.tm_mon = 6;
+  str_time.tm_mday = 5;
+  str_time.tm_hour = 10;
+  str_time.tm_min = 3;
 
-		str_time.tm_year = 2100-1900;
-		str_time.tm_mon = 6;
-		str_time.tm_mday = 5;
-		str_time.tm_hour = 10;
-		str_time.tm_min = 3;
 	
-		time_of_day = mktime(&str_time);
+  time_of_day = mktime(&str_time);
+	
+	
+  fptr = fopen("C:\Desktop\gratitude.txt", "w");
+  // Test to ensure file is open
+  if (fptr == 0)
+  {
+    printf("Error--file could not be opened.\n");
+    exit (1);
+  }
 
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
-  printf("Enter AM or PM: ");
-  gets(entry.am_pm);
-  printf("Please Describe 5 things you were grateful about today.\n");
-  printf("Include why you were grateful and how it made you feel.\n");
-  printf("1: ");
-  gets(entry.item_1);
-  printf("2: ");
-  gets(entry.item_2);
-  printf("3: ");
-  gets(entry.item_3);
-  printf("4: ");
-  gets(entry.item_4);
-  printf("5: ");
-  gets(entry.item_5);
+  
+  fprintf(fptr, "\n\nEnter AM or PM: ");
+  fgets(fptr, entry.am_pm);
+  fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
+  fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
+  fprintf(fptr, "1: ");
+  fgets(fptr, entry.item_1);
+  fprintf(fptr, "2: ");
+  fgets(fptr, entry.item_2);
+  fprintf(fptr, "3: ");
+  fgets(fptr, entry.item_3);
+  fprintf(fptr, "4: ");
+  fgets(fptr, entry.item_4);
+  fprintf(fptr, "5: ");
+  fgets(fptr, entry.item_5);
+  
+  
+  f(close);
+  return;
+  
   
   // add function and header file to record current time
   // refactor entry_item loop and iterate through iterate
