@@ -10,6 +10,8 @@ to access stored entries. */
 
 #include <stdio.h>
 #include <time.h>
+#include <stdlib.h>
+#include <ctype.h>
 
 FILE * fptr; //Defines a file pointer
 
@@ -137,7 +139,7 @@ void newUser()
 void newEntry()
 {
    struct userEntry {
-    char time_of_day[30];  
+    //char time_of_day[30];  
     char am_pm[3];
     char item_1[1000];
     char item_2[1000];
@@ -148,24 +150,25 @@ void newEntry()
   
   
   struct userEntry entry[1];
-  struct tm str_time;
-  time_t time_of_day;
-  str_time.tm_year = 2100-1900;
-  str_time.tm_mon = 6;
-  str_time.tm_mday = 5;
-  str_time.tm_hour = 10;
-  str_time.tm_min = 3;
+    //struct tm str_time;
+		// time_t time_of_day;
 
+		// str_time.tm_year = 2100-1900;
+		// str_time.tm_mon = 6;
+		// str_time.tm_mday = 5;
+		// str_time.tm_hour = 10;
+		// str_time.tm_min = 3;
 	
-  time_of_day = mktime(&str_time);
+	
+	// time_of_day = mktime(&str_time);
 	
 	
-  fptr = fopen("C:\Desktop\gratitude.txt", "w");
+//	fptr = fopen("C:Desktop\gratitude.txt", "w");
   // Test to ensure file is open
   if (fptr == 0)
   {
-    printf("Error--file could not be opened.\n");
-    exit (1);
+   printf("Error--file could not be opened.\n");
+   exit (1);
   }
 
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
