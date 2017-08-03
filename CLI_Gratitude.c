@@ -1,5 +1,3 @@
-// added header files ctype.h and stdlib.h for use of toupper() and exit()
-
 /*
 Harleigh Abel
 July 20 2017
@@ -140,14 +138,15 @@ void newUser()
 
 void newEntry()
 {
-   struct userEntry {
+  int i;
+  struct userEntry {
     //char time_of_day[30];  
     char am_pm[3];
-    char item_1[1000];
-    char item_2[1000];
-    char item_3[1000];
-    char item_4[1000];
-    char item_5[1000];
+    char item1[1000];
+    char item2[1000];
+    char item3[1000];
+    char item4[1000];
+    char item5[1000];
   }; 
   
   
@@ -165,7 +164,7 @@ void newEntry()
 	// time_of_day = mktime(&str_time);
 	
 	
-//	fptr = fopen("C:Desktop\gratitude.txt", "w");
+  fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "w");
   // Test to ensure file is open
   if (fptr == 0)
   {
@@ -180,17 +179,20 @@ void newEntry()
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
   
-  for( i = 0; i < 4; i++)
+  for(ctr = 1; ctr < 5; ctr++)
   {
-    fprintf(fptr, "%d: ", i + 1);
-    fgets(fptr, entry.item_"%d", i + 1);
+    fprintf(fptr, "%d: ", ctr);
+    fgets(fptr, entry->item[ctr]);
   }  
  
-  f(close);
+  fclose(fptr);
   return;
 
   // name file by date and am/pm
 }
+
+
+
 
 // save(); Don't really need this if I am writing to file
 // printToScreen();
