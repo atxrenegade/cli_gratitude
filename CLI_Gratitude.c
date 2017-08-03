@@ -1,3 +1,5 @@
+// added header files ctype.h and stdlib.h for use of toupper() and exit()
+
 /*
 Harleigh Abel
 July 20 2017
@@ -177,34 +179,21 @@ void newEntry()
   fgets(fptr, entry.am_pm);
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
-  fprintf(fptr, "1: ");
-  fgets(fptr, entry.item_1);
-  fprintf(fptr, "2: ");
-  fgets(fptr, entry.item_2);
-  fprintf(fptr, "3: ");
-  fgets(fptr, entry.item_3);
-  fprintf(fptr, "4: ");
-  fgets(fptr, entry.item_4);
-  fprintf(fptr, "5: ");
-  fgets(fptr, entry.item_5);
   
-  
+  for( i = 0; i < 4; i++)
+  {
+    fprintf(fptr, "%d: ", i + 1);
+    fgets(fptr, entry.item_"%d", i + 1);
+  }  
+ 
   f(close);
   return;
-  
-  
-  // add function and header file to record current time
-  // refactor entry_item loop and iterate through iterate
-  // open and write to file
+
   // name file by date and am/pm
 }
 
-
-
-
-// save();
+// save(); Don't really need this if I am writing to file
 // printToScreen();
-// sendToPrinter();
-// newEntry();
-// print();
-// reviewEntry();
+// sendToPrinter(); 
+// print(); PrintToScreen || sendToPrinter
+// reviewEntry(); > list entries by date with number
