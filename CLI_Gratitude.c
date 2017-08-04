@@ -22,6 +22,7 @@ void menu();
 void exitProgram();
 void newEntry();
 void test();
+void getTime(char time_of_day[30])
 
 int main(void)
 {
@@ -139,8 +140,8 @@ void newUser()
 void newEntry()
 {
   int i;
+  char entry_time[30];
   struct userEntry {
-    //char time_of_day[30];  
     char am_pm[3];
     char item1[1000];
     char item2[1000];
@@ -151,17 +152,7 @@ void newEntry()
   
   
   struct userEntry entry[1];
-    //struct tm str_time;
-		// time_t time_of_day;
-
-		// str_time.tm_year = 2100-1900;
-		// str_time.tm_mon = 6;
-		// str_time.tm_mday = 5;
-		// str_time.tm_hour = 10;
-		// str_time.tm_min = 3;
-	
-	
-	// time_of_day = mktime(&str_time);
+  entry_time = getTime();
 	
 	
   fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "w");
@@ -174,7 +165,8 @@ void newEntry()
 
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   
-  fprintf(fptr, "\n\nEnter AM or PM: ");
+  printf("\n\nEnter AM or PM: ");
+  fprintf(" %s", entry_time);
   fgets(fptr, entry.am_pm);
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
@@ -191,7 +183,19 @@ void newEntry()
   // name file by date and am/pm
 }
 
+/*****************************************************************/
 
+void getTime(char time_of_day[30])
+{
+  struct tm str_time;
+	time_t time_of_day;
+	str_time.tm_year = 2100-1900;
+	str_time.tm_mon = 6;
+	str_time.tm_mday = 5;
+	str_time.tm_hour = 10;
+	str_time.tm_min = 3;
+	time_of_day = mktime(&str_time);
+}
 
 
 // save(); Don't really need this if I am writing to file
