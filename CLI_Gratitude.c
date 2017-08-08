@@ -22,7 +22,7 @@ void menu();
 void exitProgram();
 void newEntry();
 void test();
-void getTime(char time_of_day[30])
+char getTime();
 
 int main(void)
 {
@@ -140,7 +140,7 @@ void newUser()
 void newEntry()
 {
   int i;
-  char entry_time[30];
+  char entry_time[50];
   struct userEntry {
     char am_pm[3];
     char item1[1000];
@@ -185,17 +185,36 @@ void newEntry()
 
 /*****************************************************************/
 
-void getTime(char time_of_day[30])
+/*****************************************************************/
+
+char getTime()
 {
-  struct tm str_time;
-	time_t time_of_day;
-	str_time.tm_year = 2100-1900;
-	str_time.tm_mon = 6;
-	str_time.tm_mday = 5;
-	str_time.tm_hour = 10;
-	str_time.tm_min = 3;
-	time_of_day = mktime(&str_time);
+ time_t current_time;
+    char* c_time_string;
+
+    /* Obtain current time. */
+    current_time = time(NULL);
+
+    if (current_time == ((time_t)-1))
+    {
+        (void) fprintf(stderr, "Failure to obtain the current time.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    /* Convert to local time format. */
+    c_time_string = ctime(&current_time);
+
+    if (c_time_string == NULL)
+    {
+        (void) fprintf(stderr, "Failure to convert the current time.\n");
+        exit(EXIT_FAILURE);
+    }
+
+    /* Print to stdout. ctime() has already added a terminating newline character. */
+    return (c_time_string);
 }
+
+
 
 
 // save(); Don't really need this if I am writing to file
