@@ -170,11 +170,11 @@ void newEntry()
   fgets(fptr, entry.am_pm);
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
-  
+  int ctr;
   for(ctr = 1; ctr < 5; ctr++)
   {
     fprintf(fptr, "%d: ", ctr);
-    fgets(fptr, entry->item[ctr]);
+    fgets(fptr, entry.item[ctr]);
   }  
  
   fclose(fptr);
@@ -189,8 +189,8 @@ void newEntry()
 
 char getTime()
 {
- time_t current_time;
-    char* c_time_string;
+    time_t current_time;
+    c_time_string;
 
     /* Obtain current time. */
     current_time = time(NULL);
@@ -210,15 +210,5 @@ char getTime()
         exit(EXIT_FAILURE);
     }
 
-    /* Print to stdout. ctime() has already added a terminating newline character. */
     return (c_time_string);
 }
-
-
-
-
-// save(); Don't really need this if I am writing to file
-// printToScreen();
-// sendToPrinter(); 
-// print(); PrintToScreen || sendToPrinter
-// reviewEntry(); > list entries by date with number
