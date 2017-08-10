@@ -1,3 +1,4 @@
+
 /*
 Harleigh Abel
 July 20 2017
@@ -80,6 +81,7 @@ void menu()
 	
   if (entry == 'N')
   {
+    printf("test-1");
   	void newEntry();
   }
   else if (entry == 'R')
@@ -139,9 +141,11 @@ void newUser()
 
 void newEntry()
 {
+  printf("Test0");
   int i;
-  char entry_time[50];
-  struct userEntry {
+  char entry_time = getTime();
+  printf("test1");
+ /* struct userEntry {
     char am_pm[3];
     char item1[1000];
     char item2[1000];
@@ -152,7 +156,7 @@ void newEntry()
   
   
   struct userEntry entry[1];
-  entry_time = getTime();
+ 
 	
 	
   fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "w");
@@ -181,6 +185,7 @@ void newEntry()
   return;
 
   // name file by date and am/pm
+*/
 }
 
 /*****************************************************************/
@@ -188,9 +193,9 @@ void newEntry()
 /*****************************************************************/
 
 char getTime()
-{
+{   printf("test2");
     time_t current_time;
-    c_time_string;
+    char* c_time_string;
 
     /* Obtain current time. */
     current_time = time(NULL);
@@ -210,5 +215,14 @@ char getTime()
         exit(EXIT_FAILURE);
     }
 
-    return (c_time_string);
+    printf(" %s", c_time_string);
 }
+
+
+
+
+// save(); Don't really need this if I am writing to file
+// printToScreen();
+// sendToPrinter(); 
+// print(); PrintToScreen || sendToPrinter
+// reviewEntry(); > list entries by date with number
