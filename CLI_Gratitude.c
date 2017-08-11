@@ -24,6 +24,7 @@ void exitProgram();
 void newEntry();
 void test();
 char getTime();
+void reviewEntry();
 
 
 int main(void)
@@ -190,6 +191,12 @@ void newEntry()
 
 /*****************************************************************/
 
+void reviewEntry()
+{
+  
+  
+  
+}
 /*****************************************************************/
 
 char getTime()
