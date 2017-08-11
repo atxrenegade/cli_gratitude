@@ -1,5 +1,4 @@
 
-
 /*
 Harleigh Abel
 July 20 2017
@@ -25,6 +24,7 @@ void exitProgram();
 void newEntry();
 void test();
 char getTime();
+
 
 int main(void)
 {
@@ -82,7 +82,7 @@ void menu()
 	
   if (entry == 'N')
   {
-    printf("test-1");
+    // *********** printf("test-1");
   	newEntry();
   }
   else if (entry == 'R')
@@ -142,11 +142,11 @@ void newUser()
 
 void newEntry()
 {
-  printf("Test0");
+  // *****************printf("Test0");
   int i;
   getTime();
   // char entry_time;
-  printf("test1");
+  // *****************printf("test1");
  /* struct userEntry {
     char am_pm[3];
     char item1[1000];
@@ -194,7 +194,7 @@ void newEntry()
 
 char getTime()
 {   
-  printf("test2");
+  // ******************* printf("test2");
     time_t current_time;
     char* c_time_string;
 
