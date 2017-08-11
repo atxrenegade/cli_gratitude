@@ -1,4 +1,5 @@
 
+
 /*
 Harleigh Abel
 July 20 2017
@@ -82,15 +83,15 @@ void menu()
   if (entry == 'N')
   {
     printf("test-1");
-  	void newEntry();
+  	newEntry();
   }
   else if (entry == 'R')
   {
-  	void reviewEntry();
+  	reviewEntry();
   }
   else if (entry == 'X')
   {
-  	void exitProgram();
+  	exitProgram();
   }		
   else
   {
@@ -143,7 +144,8 @@ void newEntry()
 {
   printf("Test0");
   int i;
-  char entry_time = getTime();
+  getTime();
+  // char entry_time;
   printf("test1");
  /* struct userEntry {
     char am_pm[3];
@@ -166,7 +168,6 @@ void newEntry()
    printf("Error--file could not be opened.\n");
    exit (1);
   }
-
   printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   
   printf("\n\nEnter AM or PM: ");
@@ -183,7 +184,6 @@ void newEntry()
  
   fclose(fptr);
   return;
-
   // name file by date and am/pm
 */
 }
@@ -193,7 +193,8 @@ void newEntry()
 /*****************************************************************/
 
 char getTime()
-{   printf("test2");
+{   
+  printf("test2");
     time_t current_time;
     char* c_time_string;
 
