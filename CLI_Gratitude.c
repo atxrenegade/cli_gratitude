@@ -1,4 +1,3 @@
-
 /*
 Harleigh Abel
 July 20 2017
@@ -20,7 +19,6 @@ void greeting();
 void newUser();
 void login();
 void menu();
-void exitProgram();
 void newEntry();
 void test();
 char getTime();
@@ -29,13 +27,11 @@ void reviewEntry();
 
 int main(void)
 {
-//test();
-greeting();
-menu();
-
-
-
-	return 0;
+  //test();
+  greeting();
+  menu();
+  
+  return 0;
 }
 
 
@@ -92,7 +88,7 @@ void menu()
   }
   else if (entry == 'X')
   {
-  	exitProgram();
+  	return;
   }		
   else
   {
@@ -120,10 +116,7 @@ char ans;
   }
 }
 /******************************************************************/
-void exitProgram()
-{
- 
-}
+
 
 /****************************************************************/
 void login()
