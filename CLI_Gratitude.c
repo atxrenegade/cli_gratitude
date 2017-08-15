@@ -12,6 +12,7 @@ to access stored entries. */
 #include <time.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <string.h>
 
 FILE * fptr; //Defines a file pointer
 
@@ -21,7 +22,7 @@ void login();
 void menu();
 void newEntry();
 void test();
-char getTime();
+char* getTime();
 void reviewEntry();
 
 
@@ -135,10 +136,18 @@ void newUser()
 /*******************************************************************/
 
 void newEntry()
+// function creates new entry and writes to dated file
 {
+  // allocate memory for entry date  
+  char *entryDate = (char*) malloc(28*sizeof(char));
+  // copy return value of getTime() current local time into entryDate variable
+  strcpy(entryDate, getTime());
+  // test 
+  printf(" %s", entryDate);
   // *****************printf("Test0");
-  int i;
-  getTime();
+  //int i;
+  
+ 
   // char entry_time;
   // *****************printf("test1");
  /* struct userEntry {
@@ -180,6 +189,7 @@ void newEntry()
   return;
   // name file by date and am/pm
 */
+  free(entryDate);
 }
 
 /*****************************************************************/
@@ -192,7 +202,7 @@ void reviewEntry()
 }
 /*****************************************************************/
 
-char getTime()
+char* getTime()
 {   
   // ******************* printf("test2");
     time_t current_time;
@@ -215,8 +225,8 @@ char getTime()
         (void) fprintf(stderr, "Failure to convert the current time.\n");
         exit(EXIT_FAILURE);
     }
-
-    printf(" %s", c_time_string);
+    return(c_time_string);
+  
 }
 
 
