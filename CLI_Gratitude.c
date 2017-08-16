@@ -14,6 +14,7 @@ to access stored entries. */
 #include <ctype.h>
 #include <string.h>
 
+
 FILE * fptr; //Defines a file pointer
 
 void greeting();
@@ -144,13 +145,10 @@ void newEntry()
   strcpy(entryDate, getTime());
   // test 
   printf(" %s", entryDate);
-  // *****************printf("Test0");
-  //int i;
+
   
- 
-  // char entry_time;
-  // *****************printf("test1");
- /* struct userEntry {
+/*  int i;
+    char* struct userEntry {
     char am_pm[3];
     char item1[1000];
     char item2[1000];
@@ -159,22 +157,21 @@ void newEntry()
     char item5[1000];
   }; 
   
-  
   struct userEntry entry[1];
- 
+ */
 	
 	
-  fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "w");
+  fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "a");
   // Test to ensure file is open
   if (fptr == 0)
   {
    printf("Error--file could not be opened.\n");
    exit (1);
   }
-  printf(" Okay User, Let's get started! Is this your AM or PM entry?");
+  /* printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   
   printf("\n\nEnter AM or PM: ");
-  fprintf(" %s", entry_time);
+  fprintf(" %s", entryDate);
   fgets(fptr, entry.am_pm);
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
@@ -184,12 +181,11 @@ void newEntry()
     fprintf(fptr, "%d: ", ctr);
     fgets(fptr, entry.item[ctr]);
   }  
- 
-  fclose(fptr);
-  return;
-  // name file by date and am/pm
 */
+
+  fclose(fptr);
   free(entryDate);
+  return;
 }
 
 /*****************************************************************/
