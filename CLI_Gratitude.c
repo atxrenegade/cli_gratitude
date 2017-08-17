@@ -17,7 +17,9 @@ to access stored entries. */
 
 FILE * fptr; //Defines a file pointer
 
-void greeting();
+// function prototypes
+
+void greeting(); 
 void newUser();
 void login();
 void menu();
@@ -29,10 +31,14 @@ void reviewEntry();
 
 int main(void)
 {
-  //test();
+  // greets user determines if user is new or existing
   greeting();
+  // once user has logged in, or created a new account 
+  // this function determines whether the user would like to review 
+  // an exisiting entry, create a new one, or exit the program
   menu();
   
+  // terminates program
   return 0;
 }
 
@@ -43,57 +49,71 @@ int main(void)
 *************************************************
 *************************************************/
 
-
+// function greets user and determines in new or existing user
+// initiates newUser() or login() for existing user depending
+// on user input
 void greeting()
 {
+  char user; // variable for user status new or existing
   
-  char user;
   printf("Welcome to Daily Gratitude Application\n\n\n");
   printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
+  // gets user status input
   scanf(" %c", &user);
+  // converts lowercase input to uppercase
   user = toupper(user); 
   if (user == 'N')
   {
+    // initiates newUser() to create new user account
   	newUser();
   }
   else if (user == 'E')
   {
+    // initiates login() to login exisitng user;
   	login();
   }
   else
   {
+    // produces error message for invalid input
   	printf("Your reply was not understood please choose (N for new user or E for Existing user)");
   }
-  // validate user data,void test()
 }
 
 /*******************************************************************/
-
+   
 void menu()
+  /* once user has logged in, or created a new account 
+     this function determines whether the user would like to review 
+     an exisiting entry, create a new one, or exit the program */
 {
   char entry; 	
-  // ***greet user by user name
+  // ***greet user by user name - to be added once newUser() has been created
   printf("\n\n\nWelcome User!!\n");
   printf("\nWould you like to enter a new entry? Or review an existing one?\n");
   printf("(N = new entry)(R = review existing entry)(X = exit): ");
+  // gets user input to determine action 
   scanf(" %c", &entry); 
+  // converts user input to uppercase
   entry = toupper(entry);
 	
   if (entry == 'N')
   {
-    // *********** printf("test-1");
+  	// initiates newEntry() to write new entry to file
   	newEntry();
   }
   else if (entry == 'R')
   {
+    // initiates reviewEntry() to open existing file
   	reviewEntry();
   }
   else if (entry == 'X')
   {
+    // returns to main to exit program
   	return;
   }		
   else
   {
+    // warns user of invalid data entry and returns to menu() to request input
   	printf("Im sorry I did not understand your response!");
 	  void menu();  
   }
