@@ -115,13 +115,13 @@ void menu()
   {
     // warns user of invalid data entry and returns to menu() to request input
   	printf("Im sorry I did not understand your response!");
-	  void menu();  
+	void menu();  
   }
 }
 /**********************************************************************/
 void test()
 {
-char ans;
+  char ans;
   scanf(" %c", &ans);
   ans = toupper(ans);
   if (ans == 'Y') 
@@ -137,9 +137,6 @@ char ans;
     printf("error");
   }
 }
-/******************************************************************/
-
-
 /****************************************************************/
 void login()
 {
@@ -155,7 +152,6 @@ void newUser()
   
 }
 /*******************************************************************/
-
 void newEntry()
 // function creates new entry and writes to dated file
 {
@@ -180,9 +176,9 @@ void newEntry()
   struct userEntry entry[1];
  */
 	
-	
+  // open or create file to write or appehend to	
   fptr = fopen("C:/Users/Harleigh Abel/gratitude.txt", "a");
-  // Test to ensure file is open
+  // Test to ensure file is open return error message if fopen failed
   if (fptr == 0)
   {
    printf("Error--file could not be opened.\n");
@@ -202,14 +198,15 @@ void newEntry()
     fgets(fptr, entry.item[ctr]);
   }  
 */
-
+  // close file
   fclose(fptr);
+  // free allocated memory	
   free(entryDate);
+ // return to main function	
   return;
 }
 
 /*****************************************************************/
-
 void reviewEntry()
 {
   
@@ -217,23 +214,25 @@ void reviewEntry()
   
 }
 /*****************************************************************/
-
 char* getTime()
 {   
   // ******************* printf("test2");
+  // declared variables for time_t and current_time		
     time_t current_time;
+  //**********************printf(test3");
+    // create a pointer vaiable to store current time and return to newEntry()	
     char* c_time_string;
 
-    /* Obtain current time. */
+    // Obtain current time. 
     current_time = time(NULL);
-
+    // checks to see if current_time is valid returns error message if not
     if (current_time == ((time_t)-1))
     {
         (void) fprintf(stderr, "Failure to obtain the current time.\n");
         exit(EXIT_FAILURE);
     }
 
-    /* Convert to local time format. */
+    // Convert to local time format.
     c_time_string = ctime(&current_time);
 
     if (c_time_string == NULL)
@@ -242,7 +241,6 @@ char* getTime()
         exit(EXIT_FAILURE);
     }
     return(c_time_string);
-  
 }
 
 
