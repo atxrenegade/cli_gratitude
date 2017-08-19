@@ -148,8 +148,16 @@ void login()
 /*******************************************************************/
 void newUser()
 {
-  
-  
+  char* username[30];		
+  printf("Hello, New User! Please select a username for yourself: ");
+  scanf(" %s", username);
+  printf("Now Please select a user password inclduing at least one letter, one number, and one special character: ");
+  // validate password 
+  // store password if acceptable	
+  scanf(" %s", password);	 
+  // open or create new document to store user names and passwords hashes	
+  printf(" Welcome to Daily Gratitude %s!", &username);
+  // return username to main function	
 }
 /*******************************************************************/
 void newEntry()
