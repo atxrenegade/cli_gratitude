@@ -217,9 +217,33 @@ void newEntry()
 /*****************************************************************/
 void reviewEntry()
 {
-  
-  
-  
+  int entry_number;
+  char answer;
+  // open file with previous entries	
+  printf("Here is a list of your previous entries.\n");
+  print("Please select which number you would like to review; ");
+  // scan file for previous entry dates
+  // output to stadard output a number list of entry dates
+  print("Please select which number you would like to review; ");	
+  scanf(" %s", &entry_number);
+  // scan file for entry
+  // return entry to screen
+  printf("Would you like to review another entry? Y/N): ");
+  scanf(" %c", &answer);	
+  answer = toupper(answer);
+	 if (ans == 'Y') 
+  { 
+    reviewEntry();
+  }
+  else if(answer == 'N')
+  {
+    return;
+  }
+  else
+  {
+    // build this into a while loop	  
+    printf("Please Enter a Valid Selection!");
+  }
 }
 /*****************************************************************/
 char* getTime()
