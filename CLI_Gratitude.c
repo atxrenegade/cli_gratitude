@@ -207,6 +207,8 @@ void newEntry()
     fgets(fptr, entry.item[ctr]);
   }  
 */
+  // give the user the option to print the entry	
+  sendToPrinter();	
   // close file
   fclose(fptr);
   // free allocated memory	
@@ -229,6 +231,8 @@ void reviewEntry()
   scanf(" %s", &entry_number);
   // scan file for entry
   // return entry to screen
+  // give the user the option to print the entry	
+  sendToPrinter();	
   printf("Would you like to review another entry? Y/N): ");
   scanf(" %c", &answer);	
   answer = toupper(answer);
