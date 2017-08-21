@@ -24,9 +24,10 @@ void newUser();
 void login();
 void menu();
 void newEntry();
-void test();
 char* getTime();
 void reviewEntry();
+void sendToPrinter();
+// void test();
 
 
 int main(void)
@@ -275,11 +276,34 @@ char* getTime()
     return(c_time_string);
 }
 
+/**********************************************************************************************************/
+void sendToPrinter()
+{
+    // what function calls print? ReviewEntry? NewEntry?
+    char answer;
+    //******************debug while loop
+    do
+      {
+      	printf("Would you like to print your current entry? Y/N: ");
+    	  scanf(" %c", &answer);
+    	  answer = toupper(answer);
+      }
+    while (answer == "Y" && answer == "N");
+
+    if (answer == "Y")
+    {
+      // send file to printer
+      printf("Your file has been sent to printer!");
+    }
+    else if (answer == "N")
+    {
+      return;
+    }
+    else
+    {
+    	printf("program error*** error code-2");
+    }
+return;
+}
 
 
-
-// save(); Don't really need this if I am writing to file
-// printToScreen();
-// sendToPrinter(); 
-// print(); PrintToScreen || sendToPrinter
-// reviewEntry(); > list entries by date with number
