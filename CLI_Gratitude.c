@@ -165,15 +165,15 @@ void newEntry()
 // function creates new entry and writes to dated file
 {
   // allocate memory for entry date  
-  char *entryDate = (char*) malloc(28*sizeof(char));
+  char *entry_date = (char*) malloc(28*sizeof(char));
   // copy return value of getTime() current local time into entryDate variable
-  strcpy(entryDate, getTime());
+  strcpy(entry_date, getTime());
   // test 
-  printf(" %s", entryDate);
+  printf(" %s", entry_date);
 
   
 /*  int i;
-    char* struct userEntry {
+    char* struct user_entry {
     char am_pm[3];
     char item1[1000];
     char item2[1000];
@@ -182,7 +182,7 @@ void newEntry()
     char item5[1000];
   }; 
   
-  struct userEntry entry[1];
+  struct user_entry entry[1];
  */
 	
   // open or create file to write or appehend to	
@@ -196,7 +196,7 @@ void newEntry()
   /* printf(" Okay User, Let's get started! Is this your AM or PM entry?");
   
   printf("\n\nEnter AM or PM: ");
-  fprintf(" %s", entryDate);
+  fprintf(" %s", entry_date);
   fgets(fptr, entry.am_pm);
   fprintf(fptr, "Please Describe 5 things you were grateful about today.\n");
   fprintf(fptr, "Include why you were grateful and how it made you feel.\n");
@@ -212,7 +212,7 @@ void newEntry()
   // close file
   fclose(fptr);
   // free allocated memory	
-  free(entryDate);
+  free(entry_date);
  // return to main function	
   return;
 }
