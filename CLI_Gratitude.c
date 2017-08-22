@@ -141,8 +141,15 @@ void test()
 /****************************************************************/
 void login()
 {
-
-
+  printf("Please enter your username: ");
+  scanf(" %s", username);
+  printf("Please enter your password: ");
+  scanf(" %s", password);	
+ // create hash of username and password
+ // open file storing usernames and passwords
+ // search database for username and password combo
+ // if username and password combo is correct print "Login successful" and return to main
+ // else print "Im sorry you username and/or password was incorrect!" and login()
 }
 
 
