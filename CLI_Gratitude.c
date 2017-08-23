@@ -140,16 +140,29 @@ void test()
 }
 /****************************************************************/
 void login()
+
 {
+  char *username = (char*) malloc(30*sizeof(char));
+  char *password = (char*) malloc(30*sizeof(char));
   printf("Please enter your username: ");
   scanf(" %s", username);
   printf("Please enter your password: ");
   scanf(" %s", password);	
- // create hash of username and password
- // open file storing usernames and passwords
- // search database for username and password combo
- // if username and password combo is correct print "Login successful" and return to main
- // else print "Im sorry you username and/or password was incorrect!" and login()
+  // create hash of username and password
+  // open file storing saved usernames and saved passwords
+  // search database for username and password combo
+  if (username == saved_username) && (password == saved_password) 
+  {
+    printf("Login successful");
+    return;
+  }
+  else 
+  {
+    printf("Im sorry you username and/or password was incorrect!"\n);
+    login();
+  }
+    free(username);
+    free(password);
 }
 
 
