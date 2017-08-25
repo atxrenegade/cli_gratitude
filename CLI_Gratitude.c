@@ -151,7 +151,7 @@ void login()
   // create hash of username and password
   // open file storing saved usernames and saved passwords
   // search database for username and password combo
-  if (username == saved_username) && (password == saved_password) 
+  if if(strcmp(username, "user") == 0)&& if(strcmp(password, "default") == 0)
   {
     printf("Login successful");
     return;
