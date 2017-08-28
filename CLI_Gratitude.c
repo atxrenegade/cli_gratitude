@@ -154,8 +154,8 @@ void login()
   // create hash of username and password
   // open file storing saved usernames and saved passwords
   // search database for username and password combo
-  // compare user input username and password combo to stored hash key and value	
-  if(strcmp(username, "user") == 0)&& if(strcmp(password, "default") == 0)
+  // compare user input username and password combo to stored hash key and hash value	
+  if(strcmp(username, "user") == 0) && (strcmp(password, "default") == 0)
   {
     // confirm login if a match	  
     printf("Login successful");
@@ -165,7 +165,7 @@ void login()
   {
     // error message if no match 
     // return to login prompts	  
-    printf("Im sorry you username and/or password was incorrect!"\n);
+    printf("Im sorry you username and/or password was incorrect!\n");
     login();
   }
     // free allocated memory for user input username and password variables 	
@@ -177,7 +177,8 @@ void login()
 /*******************************************************************/
 void newUser()
 {
-  char* username[30];		
+  char* username[30];	
+  char* password[30];
   printf("Hello, New User! Please select a username for yourself: ");
   scanf(" %s", username);
   printf("Now Please select a user password inclduing at least one letter, one number, and one special character: ");
@@ -252,10 +253,10 @@ void reviewEntry()
   char answer;
   // open file with previous entries	
   printf("Here is a list of your previous entries.\n");
-  print("Please select which number you would like to review; ");
+  printf("Please select which number you would like to review; ");
   // scan file for previous entry dates
   // output to stadard output a number list of entry dates
-  print("Please select which number you would like to review; ");	
+  printf("Please select which number you would like to review; ");	
   scanf(" %s", &entry_number);
   // scan file for entry
   // return entry to screen
@@ -264,7 +265,7 @@ void reviewEntry()
   printf("Would you like to review another entry? Y/N): ");
   scanf(" %c", &answer);	
   answer = toupper(answer);
-	 if (ans == 'Y') 
+	 if (answer == 'Y') 
   { 
     reviewEntry();
   }
@@ -325,7 +326,7 @@ void sendToPrinter()
 	     
     	answer = toupper(answer);
       }
-    while (answer == "Y" && answer == "N");
+    while (answer == "Y") && (answer == "N");
 
     if (answer == "Y")
     {
@@ -343,5 +344,4 @@ void sendToPrinter()
     }
 return;
 }
-
 
