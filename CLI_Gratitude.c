@@ -2,7 +2,7 @@
 Harleigh Abel
 July 20 2017
 CLI Gratitude App
-This program a an application of personal interest to 
+This program is an application of personal interest to 
 practice my C programming skills.  This program records 
 a user's daily gratitude entries and stores them to be 
 printed or reviewed later. It requires a username and password
@@ -66,12 +66,12 @@ void greeting()
   if (user == 'N')
   {
     // initiates newUser() to create new user account
-  	newUser();
+  	//newUser();
   }
   else if (user == 'E')
   {
-    // initiates login() to login exisitng user;
-  	login();
+    // initiates login() to login existing user;
+  	// login();
   }
   else
   {
@@ -155,7 +155,7 @@ void login()
   // open file storing saved usernames and saved passwords
   // search database for username and password combo
   // compare user input username and password combo to stored hash key and hash value	
-  if(strcmp(username, "user") == 0) && (strcmp(password, "default") == 0)
+  /*if(strcmp(username, "user") == 0) && (strcmp(password, "default") == 0)
   {
     // confirm login if a match	  
     printf("Login successful");
@@ -171,6 +171,7 @@ void login()
     // free allocated memory for user input username and password variables 	
     free(username);
     free(password);
+  */
 }
 
 
@@ -326,7 +327,7 @@ void sendToPrinter()
 	     
     	answer = toupper(answer);
       }
-    while (answer == "Y") && (answer == "N");
+    while ((answer == "Y") && (answer == "N"));
 
     if (answer == "Y")
     {
@@ -344,4 +345,3 @@ void sendToPrinter()
     }
 return;
 }
-
