@@ -314,34 +314,27 @@ char* getTime()
 void sendToPrinter()
 {
     // what function calls print? ReviewEntry? NewEntry?
-    // define variable to store user input
-    char answer;
-    //******************debug while loop
-    // loop to validate user input	
-    do
-      {
-	//  prompt user for input      
-      	printf("Would you like to print your current entry? Y/N: ");
+  // define variable to store user input
+  char answer;
+  //  prompt user for input      
+  printf("Would you like to print your current entry? Y/N: ");
 	//     
-    	scanf(" %c", &answer);
+  scanf(" %c", &answer);
 	     
-    	answer = toupper(answer);
-      }
-    while ((answer != "Y") && (answer != "N"));
-
-    if (answer == "Y")
-    {
-      // send file to printer
-      printf("Your file has been sent to printer!");
-    }
-    else if (answer == "N")
-    {
-      return;
-    }
-    else
-    {
-	// return error code if user input not valid    
-    	printf("program error*** error code-2");
-    }
+  answer = toupper(answer);	
+  if (answer == 'Y') 
+  { 
+    printf("Your file has been sent to printer!");
+  }
+  else if(ans == 'N')
+  {
+    return;
+  }
+  else
+  {
+    printf("Error-- Please enter valid input!\n");
+    sendToPrinter();  
+  }	
+    
 return;
 }
