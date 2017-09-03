@@ -179,17 +179,21 @@ void login()
 /*******************************************************************/
 void newUser()
 {
+  // declare vairable for usename and password	
   char* username[30];	
   char* password[30];
-  printf("Hello, New User! Please select a username for yourself: ");
+  // greet user 	
+  printf("Hello, New User!\nPlease select a username for yourself: ");
+  // get username	
   scanf(" %s", username);
-  printf("Now Please select a user password inclduing at least one letter, one number, and one special character: ");
+  printf("\nGreat!\nNow please select a password with at least one letter, one number, and one special character: ");	
+  scanf(" %s", password);
   // validate password 
-  // store password if acceptable	
-  scanf(" %s", password);	 
+  // store password if acceptable
   // open or create new document to store user names and passwords hashes	
-  printf(" Welcome to Daily Gratitude %s!", &username);
-  // return username to main function	
+  printf("\n\nWelcome to Daily Gratitude %s!", &username);
+  // send new user to menu
+  menu();
 }
 /*******************************************************************/
 void newEntry()
