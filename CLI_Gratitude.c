@@ -32,7 +32,9 @@ void sendToPrinter();
 
 int main(void)
 {
-  // greets user determines if user is new or existing
+  // greets user 	
+  printf("Welcome to Daily Gratitude Application\n\n\n");	
+  //determines if user is new or existing
   greeting();
   // once user has logged in, or created a new account 
   // this function determines whether the user would like to review 
@@ -56,8 +58,6 @@ int main(void)
 void greeting()
 {
   char user; // variable for user status new or existing
-  
-  printf("Welcome to Daily Gratitude Application\n\n\n");
   printf("Can you please tell me are you a new or existing user?\n\n(N = new user)(E = Existing user):  ");
   // gets user status input
   scanf(" %c", &user);
@@ -76,8 +76,9 @@ void greeting()
   else
   {
     // produces error message for invalid input
-  	printf("Your reply was not understood please choose (N for new user or E for Existing user)");
-  }
+  	printf("Your reply was not understood please choose a correct response.\n\n");
+  	greeting();
+  } 
 }
 
 /*******************************************************************/
