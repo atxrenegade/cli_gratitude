@@ -326,7 +326,7 @@ void sendToPrinter()
   { 
     printf("Your file has been sent to printer!");
   }
-  else if(ans == 'N')
+  else if(answer == 'N')
   {
     return;
   }
