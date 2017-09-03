@@ -327,7 +327,7 @@ void sendToPrinter()
 	     
     	answer = toupper(answer);
       }
-    while ((answer == "Y") && (answer == "N"));
+    while ((answer != "Y") && (answer != "N"));
 
     if (answer == "Y")
     {
