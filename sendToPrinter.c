@@ -13,18 +13,15 @@ Breakdown and testing of the sendToPrinter() for cli_gratitude */
 int main()
 {
     // what function calls print? reviewEntry && newEntry && printEntry()
+    
     // define variable to store user input
     char answer;
-    //******************debug while loop
- 
 	//  prompt user for input      
       	printf("Would you like to print your current entry? Y/N: ");
-	    
+	// get user input    
     	scanf(" %c", &answer);
-	     
+	// convert input to capital letters     
     	answer = toupper(answer);
-      }
-    while (answer == "Y") && (answer == "N");
 
     if (answer == "Y")
     {
@@ -47,3 +44,4 @@ return;
 
 
 // pass newEntry data struct to function
+// how do I send data to printer in C?
