@@ -1,7 +1,7 @@
 /*
 Harleigh Abel
-July 20 2017
-CLI Gratitude App
+Sept 6 2017
+newEntrytest.c
 Breakdown and testing of the newEntry() for cli_gratitude */
 
 #include <stdio.h>
