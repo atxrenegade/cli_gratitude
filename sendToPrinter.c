@@ -25,6 +25,9 @@ int main()
 
     if (answer == "Y")
     {
+      FILE *my_printer = popen("/dev/usb/lp0", "w"); 
+      fprintf(my_printer, "Printer test - Integer: %d, Float: %lf, String: %s",123,3.14,"Test string);
+      pclose(my_printer); 
       // send file to printer
       printf("Your file has been sent to printer!");
     }
@@ -41,7 +44,6 @@ int main()
     }
 return;
 }
-
 
 // pass newEntry data struct to function
 // how do I send data to printer in C?
