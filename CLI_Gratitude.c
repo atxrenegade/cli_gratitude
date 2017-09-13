@@ -7,6 +7,8 @@ practice my C programming skills.  This program records
 a user's daily gratitude entries and stores them to be 
 printed or reviewed later. It requires a username and password
 to access stored entries. */
+#define _XOPEN_SOURCE 500
+
 
 #include <stdio.h>
 #include <time.h>
@@ -318,28 +320,34 @@ char* getTime()
 /**********************************************************************************************************/
 void sendToPrinter()
 {
-    // what function calls print? ReviewEntry? NewEntry?
-  // define variable to store user input
-  char answer;
-  //  prompt user for input      
-  printf("Would you like to print your current entry? Y/N: ");
-	//     
-  scanf(" %c", &answer);
-	     
-  answer = toupper(answer);	
-  if (answer == 'Y') 
-  { 
-    printf("Your file has been sent to printer!");
-  }
-  else if(answer == 'N')
-  {
-    return;
-  }
-  else
-  {
-    printf("Error-- Please enter valid input!\n");
-    sendToPrinter();  
-  }	
+ // what function calls print? reviewEntry && newEntry && printEntry()
     
-return;
+    // define variable to store user input
+    char answer;
+	//  prompt user for input      
+      	printf("Would you like to print your current entry? Y/N: ");
+	// get user input    
+    	scanf(" %c", &answer);
+	// convert input to capital letters     
+    	answer = toupper(answer);
+
+    if (answer == 'Y')
+    {
+      FILE *my_printer = popen("/dev/usb/lp0", "w"); 
+      fprintf(my_printer, "Printer test - Integer: %d, Float: %lf, String: %s",123,3.14,"Test string");
+      pclose(my_printer); 
+      // send file to printer
+      printf("Your file has been sent to printer!\n");
+    }
+    else if (answer == 'N')
+    {
+      //do nothing;
+    }
+    else
+    {
+	// return error code if user input not valid    
+    	printf("program error*** error code-2\n");
+    	// sendToPrinter()
+    	sendToPrinter(); //delete after test
+    }
 }
